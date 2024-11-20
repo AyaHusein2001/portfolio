@@ -2,34 +2,31 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import AppBarButton from "./AppBarButton";
 import CustomTitle from "./CustomTitle";
 import SideBar from "./SideBar";
 import { TbMenu } from "react-icons/tb";
-interface Props {
-  window?: () => Window;
-}
 
 const navItems = ["Work", "About", "Contact"];
 
-export default function DrawerAppBar(props: Props) {
+export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle: () => void = () => {
+    console.log('hi side bar')
     setMobileOpen((prevState) => !prevState);
   };
 
   return (
-    <Box sx={{ padding: "0px", margin: "0", display: "flex" }}>
+    <Box sx={{ padding: "0px", margin: "0px", display: "flex" }}>
       <AppBar
-        sx={{ backgroundColor: "black", padding: "0px", margin: "0" }}
+        sx={{ backgroundColor: "black", padding: "0px", margin: "0px" }}
         component="nav"
       >
         <Toolbar>
-          <CustomTitle title="Aya Ahmed" color="#C7C7C7" size={32} />
+          <CustomTitle title="Aya Ahmed" color="#C7C7C7" size={3.2} />
 
           <IconButton
             aria-label="open drawer"
@@ -37,6 +34,7 @@ export default function DrawerAppBar(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ color: "#C7C7C7", mr: 2, display: { lg: "none" } }}
           >
+            
             <TbMenu color="#C7C7C7" size={44} />
           </IconButton>
 
@@ -53,7 +51,7 @@ export default function DrawerAppBar(props: Props) {
         mobileOpen={mobileOpen}
       />
 
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" >
         <Toolbar />
       </Box>
     </Box>

@@ -8,7 +8,7 @@ const AppBarButton: React.FC<{ item: string }> = ({ item }) => {
       sx={{
         fontFamily: inter.style.fontFamily,
         fontWeight: "medium",
-        fontSize: 16,
+        fontSize: '1.6rem',
         color: "#C7C7C7",
       }}
     >

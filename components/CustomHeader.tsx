@@ -3,15 +3,19 @@ import Typography from "@mui/material/Typography";
 import { Manrope } from "next/font/google";
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
-const CustomDescription: React.FC<{
-  description: string;
+import { ReactNode } from "react";
+
+const CustomHeader: React.FC<{
+  title: string | ReactNode;
   size: number;
   color: string;
+  weight: number;
+  paddingBottom?: number;
   width?: number;
   xsWidth?: number;
-}> = ({ description, size, color, width,xsWidth }) => {
+}> = ({ title, size, color, weight, paddingBottom, width, xsWidth }) => {
   return (
-    <Box sx={{ width: { xs: `${xsWidth}rem`, lg: `${width}rem` }  }}>
+    <Box sx={{ width: { xs: `${xsWidth}rem`, lg: `${width}rem` } }}>
       <Typography
         component="div"
         sx={{
@@ -20,16 +24,17 @@ const CustomDescription: React.FC<{
           fontSize: `${size}rem`,
           display: { sm: "block" },
           color: `${color}`,
-          padding: 0,
+          paddingBottom:
+            paddingBottom !== undefined ? `${paddingBottom}rem` : 0,
           margin: 0,
-
-          fontWeight: "40rem",
+          // lineHeight: '44.8px',
+          fontWeight: `${weight}px`,
         }}
       >
-        {description}
+        {title}
       </Typography>
     </Box>
   );
 };
 
-export default CustomDescription;
+export default CustomHeader;

@@ -10,11 +10,11 @@ const CustomContainedButton = () => {
       sx={{
         backgroundColor: "#D3E97A",
         color: "#0A0A0A",
-        borderRadius: "100px",
-        width: "187px",
-        height: "54px",
+        borderRadius: "10rem",
+        width: "18.7rem",
+        height: "5.4rem",
         fontFamily: manrope.style.fontFamily,
-        fontSize: "16px",
+        fontSize: "1.6rem",
         fontWeight: "700",
         gap: "15px",
       }}
