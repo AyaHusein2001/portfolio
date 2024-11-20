@@ -24,7 +24,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   marginLeft:'1.6rem'
 }));
 
-const ProjectCard = () => {
+const ProjectCard:React.FC<{image:string,title:string}> = ({image,title}) => {
   return (
     <Box
       sx={{
@@ -49,8 +49,8 @@ const ProjectCard = () => {
         }}
       >
         <Image
-          src="https://drive.google.com/uc?export=view&id=1DFMLVwSCFskonMgdQGE0BACAVa0ZJBKF"
-          alt="aya"
+          src={image}
+          alt={title}
           
           width={400}
           height={400}

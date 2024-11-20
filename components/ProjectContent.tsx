@@ -8,11 +8,19 @@ import { FaGithub } from "react-icons/fa";
 
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
-const ProjectContent = () => {
+const ProjectContent: React.FC<{
+  title: string;
+  description: string;
+
+  year: string;
+  role: string;
+  demo: string;
+  repo: string;
+}> = ({ title, description, year, role, demo, repo }) => {
   return (
     <Box sx={{ paddingLeft: "3rem", paddingTop: "3.5rem" }}>
       <CustomHeader
-        title="Promotional landing page for our favorite show"
+        title={title}
         color="#ffffff"
         size={3.2}
         weight={500}
@@ -21,7 +29,7 @@ const ProjectContent = () => {
         xsWidth={34.3}
       />
       <CustomDescription
-        description="Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures."
+        description={description}
         color="#C7C7C7"
         size={1.6}
         width={57.6}
@@ -45,7 +53,7 @@ const ProjectContent = () => {
           }}
         >
           <CustomDescription description="Year" color="#fff" size={1.6} />
-          <CustomDescription description="2023" color="#C7C7C7" size={1.6} />
+          <CustomDescription description={year} color="#C7C7C7" size={1.6} />
         </Box>
         <Divider sx={{ borderColor: "#484848" }} />
         <Box
@@ -72,7 +80,7 @@ const ProjectContent = () => {
         >
           <CustomDescription description="Role" color="#fff" size={1.6} />
           <CustomDescription
-            description="Front-end Developer"
+            description={role}
             color="#C7C7C7"
             size={1.6}
           />
@@ -91,7 +99,7 @@ const ProjectContent = () => {
             }}
             fontSize={16}
             color="#D3E97A"
-            href="#"
+            href={demo}
             underline="none"
           >
             LIVE DEMO
@@ -112,7 +120,7 @@ const ProjectContent = () => {
             }}
             fontSize={16}
             color="#D3E97A"
-            href="#"
+            href={repo}
             underline="none"
           >
             SEE ON GITHUB
