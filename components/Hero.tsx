@@ -1,7 +1,7 @@
 import { Box, IconButton } from "@mui/material";
 import CustomTitle from "./CustomTitle";
 import Image from "next/image";
-
+import { FaCircle } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import CustomDescription from "./CustomDescription";
@@ -39,15 +39,26 @@ const Hero = () => {
           width={54.4}
         />
         <Box sx={{ display: "flex", gap: "1rem" }}>
-          <CustomContainedButton />
+          <CustomContainedButton
+            icon={<FaCircle size={10} />}
+            text="Contact Me"
+          />
           <IconButton
-            sx={{ backgroundColor: "#222222", width: "5.4rem", height: "5.4rem" }}
+            sx={{
+              backgroundColor: "#222222",
+              width: "5.4rem",
+              height: "5.4rem",
+            }}
             aria-label="linkedin"
           >
             <FaLinkedinIn color="#D3E97A" />
           </IconButton>
           <IconButton
-            sx={{ backgroundColor: "#222222", width: "5.4rem", height: "5.4rem" }}
+            sx={{
+              backgroundColor: "#222222",
+              width: "5.4rem",
+              height: "5.4rem",
+            }}
             aria-label="linkedin"
           >
             <FaGithub color="#D3E97A" />

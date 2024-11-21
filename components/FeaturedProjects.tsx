@@ -20,6 +20,7 @@ const FeaturedProjects = () => {
       />
       {projects.map((project) => (
         <Project
+          key={project.title}
           title={project.title}
           image={project.image}
           description={project.description}
@@ -27,6 +28,7 @@ const FeaturedProjects = () => {
           role={project.role}
           demo={project.demo}
           repo={project.repo}
+          projectType={project.projectType}
         />
       ))}
     </Box>
