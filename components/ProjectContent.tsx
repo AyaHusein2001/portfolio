@@ -1,12 +1,9 @@
-import { Box, Divider, Link } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
-import { Manrope } from "next/font/google";
 import CustomHeader from "./CustomHeader";
-import CustomDescription from "./CustomDescription";
 import { MdArrowOutward } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
-
-const manrope = Manrope({ weight: "400", subsets: ["latin"] });
+import CustomLink from "./CustomLink";
 
 const ProjectContent: React.FC<{
   title: string;
@@ -18,32 +15,32 @@ const ProjectContent: React.FC<{
   repo: string;
 }> = ({ title, description, year, role, demo, repo }) => {
   return (
-    <Box sx={{ paddingLeft: "3rem", paddingTop: "3.5rem" }}>
-      <CustomHeader
-        title={title}
-        color="#ffffff"
-        size={3.2}
-        weight={500}
-        paddingBottom={1.6}
-        width={57.6}
-        xsWidth={34.3}
-      />
-      <CustomDescription
-        description={description}
-        color="#C7C7C7"
-        size={1.6}
-        width={57.6}
-        xsWidth={34.3}
-      />
+    <Box
+      sx={{
+        width: 576,
+        paddingLeft: { xs: "0", lg: "3rem" },
+        paddingTop: "3.5rem",
+      }}
+    >
+      <Typography sx={{ paddingBottom: "1.6rem" }} variant="h2">
+        {title}
+      </Typography>
+
+      <Typography width={576} variant="h6">
+        {description}
+      </Typography>
+
       <Box sx={{ paddingTop: "2rem" }}>
-        <CustomHeader
-          title="PROJECT INFO"
-          color="#ffffff"
-          size={1.6}
-          weight={600}
-          paddingBottom={1.6}
-        />
-        <Divider sx={{ borderColor: "#484848" }} />
+        <Typography
+          fontSize={16}
+          fontWeight={600}
+          sx={{ paddingBottom: "1.6rem" }}
+          variant="h2"
+        >
+          PROJECT INFO
+        </Typography>
+
+        <Divider />
 
         <Box
           sx={{
@@ -52,10 +49,13 @@ const ProjectContent: React.FC<{
             justifyContent: "space-between",
           }}
         >
-          <CustomDescription description="Year" color="#fff" size={1.6} />
-          <CustomDescription description={year} color="#C7C7C7" size={1.6} />
+          <Typography color="#fff" variant="h6">
+            Year
+          </Typography>
+          <Typography variant="h6">{year}</Typography>
         </Box>
-        <Divider sx={{ borderColor: "#484848" }} />
+        <Divider />
+
         <Box
           sx={{
             display: "flex",
@@ -63,72 +63,38 @@ const ProjectContent: React.FC<{
             justifyContent: "space-between",
           }}
         >
-          <CustomDescription description="Client" color="#fff" size={1.6} />
-          <CustomDescription
-            description="World News"
-            color="#C7C7C7"
-            size={1.6}
-          />
+          <Typography color="#fff" variant="h6">
+            Role
+          </Typography>
+          <Typography variant="h6">{role}</Typography>
         </Box>
-        <Divider sx={{ borderColor: "#484848" }} />
-        <Box
-          sx={{
-            display: "flex",
-            paddingY: "1rem",
-            justifyContent: "space-between",
-          }}
-        >
-          <CustomDescription description="Role" color="#fff" size={1.6} />
-          <CustomDescription
-            description={role}
-            color="#C7C7C7"
-            size={1.6}
-          />
-        </Box>
-        <Divider sx={{ borderColor: "#484848" }} />
+        <Divider />
 
         <Box sx={{ display: "flex", paddingTop: "30px", gap: "24px" }}>
-          <Link
-            fontWeight={700}
-            sx={{
-              borderColor: "#D3E97A",
-              borderBottom: "2px solid",
-              paddingBottom: "4px",
-              display: "flex",
-              alignItems: "center",
-            }}
-            fontSize={16}
-            color="#D3E97A"
-            href={demo}
-            underline="none"
-          >
-            LIVE DEMO
-            <MdArrowOutward
-              style={{ margin: "4px", fontWeight: "700px" }}
-              size={24}
-            />
-          </Link>
-
-          <Link
-            fontWeight={700}
-            sx={{
-              borderColor: "#D3E97A",
-              borderBottom: "2px solid",
-              paddingBottom: "4px",
-              display: "flex",
-              alignItems: "center",
-            }}
-            fontSize={16}
-            color="#D3E97A"
-            href={repo}
-            underline="none"
-          >
-            SEE ON GITHUB
-            <FaGithub
-              style={{ margin: "4px", fontWeight: "700px" }}
-              size={24}
-            />
-          </Link>
+          <CustomLink
+            link={demo}
+            children={
+              <>
+                LIVE DEMO
+                <MdArrowOutward
+                  style={{ margin: "4px", fontWeight: "700px" }}
+                  size={24}
+                />
+              </>
+            }
+          />
+          <CustomLink
+            link={repo}
+            children={
+              <>
+                SEE ON GITHUB
+                <FaGithub
+                  style={{ margin: "4px", fontWeight: "700px" }}
+                  size={24}
+                />
+              </>
+            }
+          />
         </Box>
       </Box>
     </Box>

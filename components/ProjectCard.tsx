@@ -1,7 +1,6 @@
 import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
-import ButtonBase from "@mui/material/ButtonBase";
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
 const ProjectCard: React.FC<{
@@ -40,7 +39,6 @@ const ProjectCard: React.FC<{
       >
         {projectType}
       </Button>
-
       <Box
         sx={{
           width: "100%",
@@ -58,6 +56,7 @@ const ProjectCard: React.FC<{
           style={{
             borderRadius: "2rem",
             width: "80%",
+
             height: "auto", // Keeps the aspect ratio
           }}
         />

@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { Bebas_Neue } from "next/font/google";
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
+
 import { ReactNode } from "react";
 
 const CustomTitle: React.FC<{
@@ -15,7 +16,6 @@ const CustomTitle: React.FC<{
         fontFamily: bebasNeue.style.fontFamily,
         flexGrow: 1,
         fontSize: `${size}rem`,
-        display: { sm: "block" },
         color: `${color}`,
         padding: 0,
         margin: 0,

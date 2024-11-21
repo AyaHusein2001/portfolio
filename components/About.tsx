@@ -1,76 +1,55 @@
-import { Box, IconButton, Link, Stack } from "@mui/material";
-import CustomTitle from "./CustomTitle";
-import Image from "next/image";
-import Grid from "@mui/material/Grid2";
 
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import CustomDescription from "./CustomDescription";
-import CustomContainedButton from "./CustomContainedButton";
-import CustomHeader from "./CustomHeader";
+import Grid from "@mui/material/Grid2";
+import CustomLink from "./CustomLink";
+import { Typography } from "@mui/material";
 
 const About = () => {
   return (
     <Grid
       container
-      spacing={2}
       sx={{
         justifyContent: "space-between",
         padding: { xs: "6.4rem", lg: "10.8rem" },
         paddingTop: { xs: "4rem", lg: "12.2rem" },
         alignItems: "center",
-
         gap: { xs: "4rem", lg: "1rem" },
       }}
     >
       <Grid
-        sx={{ display: { xs: "none", lg: "block" }, alignSelf: "flex-start" }}
+        sx={{ display: { xs: "none", lg: "flex" }, alignSelf: "flex-start" }}
       >
-        <CustomTitle title="ABOUT ME" color="#ffffff" size={10.1} />
+        <Typography variant="h1">About Me</Typography>
       </Grid>
-      <Grid spacing={3}>
-        <Grid sx={{ display: { xs: "none", lg: "block" } }}>
-          <CustomHeader
-            title="I am a front-end developer based in Sydney. Has Mechanical Engineering background. "
-            color="#ffffff"
-            size={3.2}
-            weight={500}
-            paddingBottom={1.6}
-            width={57.6}
-            xsWidth={34.3}
-          />
+      <Grid
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1.6rem",
+          width: '57.6rem',
+        }}
+      >
+        <Grid sx={{ display: { xs: "none", lg: "flex" } }}>
+          <Typography variant="h2" >
+          I am a front-end developer based in Sydney. Has Mechanical Engineering background. 
+  
+          </Typography>
+          
         </Grid>
-        <Grid sx={{paddingLeft: { xs: "6.4rem" }}} >
-          <CustomDescription
-            description="I am a front-end developer based in Sydney looking for exciting opportunities. Has Mechanical Engineering background. Likes to focus on accessibility when developing. Passionate and curious about solving problems. Currently, I’m exploring Reactjs, Webflow and a bit of Designing. While I am not programming, I enjoy playing football, photography and playing Valorant. Learning more to improve skill."
-            color="#C7C7C7"
-            size={1.6}
-            width={57.6}
-            xsWidth={34.3}
 
-          />
+        <Grid sx={{ paddingLeft: { xs: "3.4rem", lg: "0" } }}>
+          <Typography variant="h6">
+            I am a front-end developer based in Sydney looking for exciting
+            opportunities. Has Mechanical Engineering background. Likes to focus
+            on accessibility when developing. Passionate and curious about
+            solving problems. Currently, I’m exploring Reactjs, Webflow and a
+            bit of Designing. While I am not programming, I enjoy playing
+            football, photography and playing Valorant. Learning more to improve
+            skill.
+          </Typography>
         </Grid>
-        <Grid sx={{paddingLeft: { xs: "6.4rem" }}}>
-          <Link
-            fontWeight={700}
-            sx={{
-              borderColor: "#D3E97A",
-              borderBottom: "2px solid",
-             
-              paddingTop: "3rem",
-              display: "flex",
-              paddingBottom:'0.4rem',
-              alignItems: "center",
-              width: "fit-content"
-            }}
-            fontSize={16}
-            color="#D3E97A"
-            href="#"
-            underline="none"
 
-          >
-            MORE ABOUT ME
-          </Link>
+        <Grid sx={{ paddingLeft: { xs: "3.4rem", lg: "0" } }}>
+          <CustomLink link="/about" children={<>More About Me</>} />
         </Grid>
       </Grid>
     </Grid>

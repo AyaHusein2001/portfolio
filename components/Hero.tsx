@@ -1,10 +1,9 @@
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import CustomTitle from "./CustomTitle";
 import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import CustomDescription from "./CustomDescription";
 import CustomContainedButton from "./CustomContainedButton";
 const Hero = () => {
   return (
@@ -19,25 +18,26 @@ const Hero = () => {
         gap: { xs: "4rem", lg: "1rem" },
       }}
     >
-      <Box sx={{ display: "flex", gap: "4rem", flexDirection: "column" }}>
+      <Box
+        sx={{
+          display: "flex",
+          width: { xs: "34.3rem", lg: "54.4rem" },
+          gap: "4rem",
+          flexDirection: "column",
+        }}
+      >
         <Box>
-          <CustomTitle
-            title={
-              <>
-                HI,I AM <br />
-                AYA AHMED.{" "}
-              </>
-            }
-            color="#ffffff"
-            size={10.1}
-          />
+          <Typography variant="h1">
+            HI,I AM <br />
+            AYA AHMED.
+          </Typography>
         </Box>
-        <CustomDescription
-          description="A Sydney based front-end developer passionate about building accessible and user friendly websites."
-          color="#C7C7C7"
-          size={1.6}
-          width={54.4}
-        />
+
+        <Typography variant="h6">
+          A Sydney based front-end developer passionate about building
+          accessible and user friendly websites.
+        </Typography>
+
         <Box sx={{ display: "flex", gap: "1rem" }}>
           <CustomContainedButton
             icon={<FaCircle size={10} />}
