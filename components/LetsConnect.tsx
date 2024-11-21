@@ -59,20 +59,20 @@ const LetsConnect = () => {
       </Grid>
 
       <Grid>
-        <Grid sx={{ paddingLeft: { xs: "6.4rem" } }}>
+        <Grid >
           <CustomTextField label="Name" multiline={false} />
         </Grid>
-        <Grid sx={{ paddingLeft: { xs: "6.4rem" } }}>
+        <Grid >
           <CustomTextField label="Email" multiline={false} />
         </Grid>
-        <Grid sx={{ paddingLeft: { xs: "6.4rem" } }}>
+        <Grid >
           <CustomTextField label="Subject" multiline={false} />
         </Grid>
 
-        <Grid sx={{ paddingLeft: { xs: "6.4rem" } }}>
+        <Grid >
           <CustomTextField label="Message" multiline={true} />
         </Grid>
-        <Grid sx={{ paddingLeft: { xs: "6.4rem" } }}>
+        <Grid >
           <CustomContainedButton />
         </Grid>
       </Grid>

@@ -20,7 +20,7 @@ const CustomTextField:React.FC<{
         fontFamily: manrope.style.fontFamily, 
         color: "#FFFFFF", 
         height: multiline ? "auto" : "5rem",
-        minHeight:multiline ? "8rem" : "5rem",
+        minHeight:multiline ? "13.2rem" : "5rem",
         padding: multiline ? "auto" : "1.2rem",
        
         fontSize:'1.8rem',
