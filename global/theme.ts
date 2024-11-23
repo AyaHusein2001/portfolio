@@ -2,6 +2,7 @@
 import { createTheme } from "@mui/material/styles";
 import { Manrope } from "next/font/google";
 import { Bebas_Neue } from "next/font/google";
+
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
@@ -11,6 +12,19 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderColor: "#484848",
+        },
+      },
+    },
+
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#222222", 
+          width: "5.4rem", 
+          height: "5.4rem", 
+          "&:hover": {
+            backgroundColor: "#333333", 
+          },
         },
       },
     },
