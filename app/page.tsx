@@ -5,6 +5,7 @@ import { Divider } from "@mui/material";
 import theme from "@/global/theme";
 
 import { ThemeProvider } from "@mui/material/styles";
+import LetsConnect from "@/components/LetsConnect";
 
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <FeaturedProjects />
       <Divider />
       <About />
+      <Divider />
+<LetsConnect />
     </ThemeProvider>
   );
 }

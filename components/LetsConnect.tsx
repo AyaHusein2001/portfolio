@@ -1,91 +1,52 @@
-import { Box, IconButton, Link, Stack, TextField } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import CustomTitle from "./CustomTitle";
-import Image from "next/image";
 import Grid from "@mui/material/Grid2";
-
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import CustomDescription from "./CustomDescription";
 import CustomContainedButton from "./CustomContainedButton";
-import CustomHeader from "./CustomHeader";
 import { FaXTwitter } from "react-icons/fa6";
 import CustomTextField from "./CustomTextField";
+import Link from "next/link";
+import InlineLink from "./InlineLink";
 
 const LetsConnect = () => {
   return (
     <Grid
       container
       sx={{
-        // justifyContent: "space-between",
+        justifyContent: "space-between",
         padding: { xs: "6.4rem", lg: "10.8rem" },
         paddingTop: { xs: "4rem", lg: "12.2rem" },
         alignItems: "center",
-
         gap: { xs: "4rem", lg: "1rem" },
       }}
     >
-      <Grid sx={{ alignSelf: "flex-start" }}>
-        <Grid>
-          <CustomTitle title="LET'S CONNECT" color="#ffffff" size={10.1} />
-        </Grid>
-        <Grid>
-          <CustomDescription
-            description="say hello at aya.ahmed2001.aa@gmail.com"
-            color="#C7C7C7"
-            size={1.6}
-            width={57.6}
-            xsWidth={34.3}
-          />
-        </Grid>
+      <Stack direction={"column"} alignSelf={"flex-start"}>
+        <Typography variant="h1">LET'S CONNECT</Typography>
+        <Typography variant="h6">
+        say hello at <InlineLink text='aya.ahmed2001.aa@gmail.com' link='/' />
+          
+        </Typography>
+        <Typography variant="h6">For more Info , <InlineLink text='here is my resume' link='/' /></Typography>
 
-        <Grid>
-          <CustomDescription
-            description="For more Info , here is my resume"
-            color="#C7C7C7"
-            size={1.6}
-            width={57.6}
-            xsWidth={34.3}
-          />
-        </Grid>
+        <Stack direction="row" sx={{ gap: "2.4rem", paddingTop: "4rem" }}>
+          <FaGithub size={32} color="#D3E97A" />
+          <FaLinkedinIn size={32} color="#D3E97A" />
+          <FaXTwitter size={32} color="#D3E97A" />
+          <FaInstagram size={32} color="#D3E97A" />
+        </Stack>
+        <Typography sx={{ alignSelf: "flex-end" }} variant="h6">
+          © 2023 Robert Garcia
+        </Typography>
+      </Stack>
 
-        <Grid sx={{ paddingTop: "4rem" }}>
-          <Stack direction="row" sx={{ gap: "2.4rem" }}>
-            <FaGithub size={32} color="#D3E97A" />
-            <FaLinkedinIn size={32} color="#D3E97A" />
-            <FaXTwitter size={32} color="#D3E97A" />
-            <FaInstagram size={32} color="#D3E97A" />
-          </Stack>
-        </Grid>
-      </Grid>
-
-      <Grid>
-        <Grid >
-          <CustomTextField label="Name" multiline={false} />
-        </Grid>
-        <Grid >
-          <CustomTextField label="Email" multiline={false} />
-        </Grid>
-        <Grid >
-          <CustomTextField label="Subject" multiline={false} />
-        </Grid>
-
-        <Grid >
-          <CustomTextField label="Message" multiline={true} />
-        </Grid>
-        <Grid >
-          <CustomContainedButton />
-        </Grid>
-      </Grid>
-
-      <Grid sx={{ justifySelf: "flex-end" }}>
-        <CustomDescription
-          description="© 2023 Robert Garcia"
-          color="#C7C7C7"
-          size={1.6}
-          width={57.6}
-          xsWidth={34.3}
-        />
-      </Grid>
+      <Stack sx={{ gap: "2.4rem" }}>
+        <CustomTextField label="Name" multiline={false} />
+        <CustomTextField label="Email" multiline={false} />
+        <CustomTextField label="Subject" multiline={false} />
+        <CustomTextField label="Message" multiline={true} />
+        <CustomContainedButton text="SUBMIT" />
+      </Stack>
     </Grid>
   );
 };

@@ -11,14 +11,19 @@ const FeaturedProjects = () => {
         paddingY: "8rem",
       }}
     >
-      <Typography variant="h1" sx={{fontSize:'7.6rem'}}> Featured Projects</Typography>
-      
+      <Typography variant="h1" sx={{ fontSize: "7.6rem" }}>
+        {" "}
+        Featured Projects
+      </Typography>
+
       <Typography width={540} variant="h6">
-      Here are some of the selected projects that showcase my passion for front-end development.
-        </Typography>
-      
+        Here are some of the selected projects that showcase my passion for
+        front-end development.
+      </Typography>
+
       {projects.map((project) => (
         <Project
+          key={project.title}
           title={project.title}
           image={project.image}
           description={project.description}
