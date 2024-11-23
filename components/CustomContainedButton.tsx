@@ -1,10 +1,9 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import { Manrope } from "next/font/google";
-import { FaCircle } from "react-icons/fa";
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
-const CustomContainedButton = () => {
+const CustomContainedButton:React.FC<{text:string,icon?:React.ReactNode}> = ({text,icon}) => {
   return (
     <Button
       sx={{
@@ -19,9 +18,9 @@ const CustomContainedButton = () => {
         gap: "15px",
       }}
       variant="contained"
-      endIcon={<FaCircle size={10} />}
+      endIcon={icon}
     >
-      Contact Me
+      {text}
     </Button>
   );
 };

@@ -8,6 +8,7 @@ import AppBarButton from "./AppBarButton";
 import CustomTitle from "./CustomTitle";
 import SideBar from "./SideBar";
 import { TbMenu } from "react-icons/tb";
+import { Typography } from "@mui/material";
 
 const navItems = ["Work", "About", "Contact"];
 
@@ -25,8 +26,11 @@ export default function DrawerAppBar() {
         sx={{ backgroundColor: "black", padding: "0px", margin: "0px" }}
         component="nav"
       >
-        <Toolbar>
-          <CustomTitle title="Aya Ahmed" color="#C7C7C7" size={3.2} />
+        <Toolbar sx={{display:'flex',justifyContent:'space-between'}}>
+        {/* <CustomTitle title="Aya Ahmed" color="#ffffff" size={7} /> */}
+        <Typography variant="h1"  sx={{fontSize:'3.2rem'}}>
+            Aya Ahmed
+          </Typography>
 
           <IconButton
             aria-label="open drawer"

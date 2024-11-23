@@ -12,12 +12,13 @@ const Project: React.FC<{
   role: string;
   demo: string;
   repo: string;
-}> = ({ title, description, image, year, role, demo, repo }) => {
+  projectType:string;
+}> = ({ title, description, image, year, role, demo, repo,projectType }) => {
   return (
     <Box sx={{ width: "100%", height: "100%" }}>
       <Grid sx={{ paddingY: "6rem" }} container spacing={2}>
         <Grid>
-          <ProjectCard title={title} image={image} />
+          <ProjectCard  projectType={projectType} title={title} image={image} />
         </Grid>
         <Grid>
           <ProjectContent
@@ -27,6 +28,7 @@ const Project: React.FC<{
             role={role}
             demo={demo}
             repo={repo}
+            
           />
         </Grid>
       </Grid>
