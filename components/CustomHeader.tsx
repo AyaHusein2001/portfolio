@@ -22,7 +22,6 @@ const CustomHeader: React.FC<{
           fontFamily: manrope.style.fontFamily,
           flexGrow: 1,
           fontSize: `${size}rem`,
-          display: { sm: "block" },
           color: `${color}`,
           paddingBottom:
             paddingBottom !== undefined ? `${paddingBottom}rem` : 0,

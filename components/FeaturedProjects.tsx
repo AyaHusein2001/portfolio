@@ -1,7 +1,6 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import CustomTitle from "./CustomTitle";
-import CustomDescription from "./CustomDescription";
 import Project from "./Project";
 import projects from "@/data/projects";
 const FeaturedProjects = () => {
@@ -12,12 +11,12 @@ const FeaturedProjects = () => {
         paddingY: "8rem",
       }}
     >
-      <CustomTitle title="Featured Projects" color="#ffffff" size={7} />
-      <CustomDescription
-        description="Here are some of the selected projects that showcase my passion for front-end development."
-        color="#C7C7C7"
-        size={1.6}
-      />
+      <Typography variant="h1" sx={{fontSize:'7.6rem'}}> Featured Projects</Typography>
+      
+      <Typography width={540} variant="h6">
+      Here are some of the selected projects that showcase my passion for front-end development.
+        </Typography>
+      
       {projects.map((project) => (
         <Project
           title={project.title}
@@ -27,6 +26,7 @@ const FeaturedProjects = () => {
           role={project.role}
           demo={project.demo}
           repo={project.repo}
+          projectType={project.projectType}
         />
       ))}
     </Box>
