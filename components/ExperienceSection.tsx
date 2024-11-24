@@ -1,7 +1,6 @@
 import Grid from "@mui/material/Grid2";
 import { Stack, Typography } from "@mui/material";
 import experience from "@/data/experience";
-import Skill from "./Skill";
 
 const ExperienceSection = () => {
   return (
