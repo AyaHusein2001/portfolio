@@ -1,9 +1,10 @@
 import Grid from "@mui/material/Grid2";
-
 import { Box, IconButton, Stack, Typography } from "@mui/material";
 import CustomContainedButton from "@/components/CustomContainedButton";
 import { FaCircle, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
+import { MdDownloadForOffline } from "react-icons/md";
+import Link from "next/link";
 
 const Info = () => {
   return (
@@ -18,9 +19,7 @@ const Info = () => {
           gap: { xs: "4rem", lg: "1rem" },
         }}
       >
-        <Grid
-          sx={{  alignSelf: "flex-start" }}
-        >
+        <Grid sx={{ alignSelf: "flex-start" }}>
           <Typography variant="h1">About Me</Typography>
         </Grid>
         <Grid
@@ -33,54 +32,67 @@ const Info = () => {
         >
           <Grid>
             <Typography variant="h2">
-              I am a front-end developer based in Sydney. Has Mechanical
-              Engineering background.
+              I am a full-stack developer . Has Computer Engineering Bachelor
+              degree.
             </Typography>
           </Grid>
 
-          <Grid >
+          <Grid>
             <Typography variant="h6">
-              I am a front-end developer based in Sydney looking for exciting
-              opportunities. Has Mechanical Engineering background. Likes to
-              focus on accessibility when developing. Passionate and curious
-              about solving problems. Currently, I’m exploring Reactjs, Webflow
-              and a bit of Designing. While I am not programming, I enjoy
-              playing football, photography and playing Valorant. Learning more
-              to improve skill.
+              I am a full-stack developer with a foundation in engineering and
+              web development. I specialize in building responsive,
+              user-friendly applications using modern technologies like
+              React.js,Next.js, Flask, and Tailwind CSS. Passionate about
+              solving complex problems, I enjoy crafting innovative solutions
+              that integrate functionality with design. Currently, I’m honing my
+              skills in web development and exploring advanced frameworks. When
+              I’m not coding, you’ll find me Reading, , or diving into the
+              latest tech trends. Always eager to learn and grow!
             </Typography>
           </Grid>
 
           <Stack direction="row" sx={{ gap: "1rem" }}>
             <CustomContainedButton
-              icon={<FaCircle size={10} />}
+              link="https://drive.google.com/uc?export=view&id=1zhBOaNcBLopSxqtRfmj2moO2mMlWRyzH"
+              xsIcon={
+                <MdDownloadForOffline
+                  style={{ marginLeft: "2rem" }}
+                  size={35}
+                />
+              }
+              lgIcon={<FaCircle style={{ marginLeft: "2rem" }} size={10} />}
               text="Download Resume"
             />
-            <IconButton aria-label="linkedin">
-              <FaLinkedinIn color="#D3E97A" />
-            </IconButton>
-            <IconButton aria-label="linkedin">
-              <FaGithub color="#D3E97A" />
-            </IconButton>
+            <Link href="https://www.linkedin.com/in/aya-ahmed-50106914a/">
+              <IconButton aria-label="linkedin">
+                <FaLinkedinIn color="#61d5ff" />
+              </IconButton>
+            </Link>
+            <Link href="https://github.com/AyaHusein2001">
+              <IconButton aria-label="github">
+                <FaGithub color="#61d5ff" />
+              </IconButton>
+            </Link>
           </Stack>
         </Grid>
       </Grid>
 
       <Box
-      sx={{
-        alignSelf: "center",
-        width: { xs: "40rem", lg: "80rem" },
-        height: { xs: "30rem", lg: "60rem" },
-        position: "relative", 
-      }}
-    >
-      <Image
-        src="https://drive.google.com/uc?export=view&id=19fr4K76DKeK-l94_nHrQoQZOZgBc1Kq4"
-        alt="aya"
-        layout="fill" 
-        objectFit="cover"
-        style={{ borderRadius: "2rem" }}
-      />
-    </Box>
+        sx={{
+          alignSelf: "center",
+          width: { xs: "40rem", lg: "80rem" },
+          height: { xs: "30rem", lg: "60rem" },
+          position: "relative",
+        }}
+      >
+        <Image
+          src="https://drive.google.com/uc?export=view&id=19fr4K76DKeK-l94_nHrQoQZOZgBc1Kq4"
+          alt="aya"
+          layout="fill"
+          objectFit="cover"
+          style={{ borderRadius: "2rem" }}
+        />
+      </Box>
     </Stack>
   );
 };

@@ -9,7 +9,7 @@ const InlineLink: React.FC<{ link: string; text: string }> = ({
     <Link
       style={{
         color: "#fff", 
-        borderBottom: "1px solid #D3E97A", 
+        borderBottom: "1px solid #61d5ff", 
       }}
       href={link}
     >

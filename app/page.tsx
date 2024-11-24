@@ -2,15 +2,11 @@ import About from "@/components/About";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Hero from "@/components/Hero";
 import { Divider } from "@mui/material";
-import theme from "@/global/theme";
-
-import { ThemeProvider } from "@mui/material/styles";
 import LetsConnect from "@/components/LetsConnect";
-
 
 export default function Home() {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Hero />
       <Divider />
 
@@ -18,7 +14,8 @@ export default function Home() {
       <Divider />
       <About />
       <Divider />
-<LetsConnect />
-    </ThemeProvider>
+      <LetsConnect />
+    </>
+    
   );
 }

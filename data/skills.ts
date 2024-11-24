@@ -1,6 +1,27 @@
-const skills = ["HTML", "CSS", "JS", "React", "Next", "Typescript",
-    "Typescript2",
-    "Typescript3",
-    "Typescript4"
-];
-export default skills;
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Typescript",
+    "React.js",
+    "Node.js",
+    "Next.js",
+    "Express.js",
+    "Flutter",
+    "Flask",
+    "Tailwind CSS",
+    "Material UI",
+    "C#",
+    "Java",
+    "C/C++",
+    "Dart",
+    "SQL",
+    "NoSQL",
+    "Python",
+    "MongoDB",
+    "MySQL",
+    "SQLServer",
+    "Linux",
+  ];
+  export default skills;
+  

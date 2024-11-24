@@ -1,6 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
-import CustomHeader from "./CustomHeader";
 import { MdArrowOutward } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 import CustomLink from "./CustomLink";
@@ -69,20 +68,21 @@ const ProjectContent: React.FC<{
           <Typography variant="h6">{role}</Typography>
         </Box>
         <Divider />
-
         <Box sx={{ display: "flex", paddingTop: "30px", gap: "24px" }}>
-          <CustomLink
-            link={demo}
-            children={
-              <>
-                LIVE DEMO
-                <MdArrowOutward
-                  style={{ margin: "4px", fontWeight: "700px" }}
-                  size={24}
-                />
-              </>
-            }
-          />
+          {demo && (
+            <CustomLink
+              link={demo}
+              children={
+                <>
+                  LIVE DEMO
+                  <MdArrowOutward
+                    style={{ margin: "4px", fontWeight: "700px" }}
+                    size={24}
+                  />
+                </>
+              }
+            />
+          )}
           <CustomLink
             link={repo}
             children={

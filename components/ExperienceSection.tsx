@@ -4,7 +4,7 @@ import experience from "@/data/experience";
 
 const ExperienceSection = () => {
   return (
-    <Stack>
+    <Stack id="experience">
       <Grid
         container
         sx={{
@@ -30,16 +30,18 @@ const ExperienceSection = () => {
           {experience.map((exp) => (
             <>
               <Grid
+                key={exp.company}
                 container
-                alignItems={'center'}
-               
+                alignItems={"center"}
                 spacing={{ xs: 2, lg: 20 }}
                 columns={{ xs: 1, lg: 2 }}
               >
                 <Typography variant="h2">{exp.role}</Typography>
                 <Typography variant="h6">{exp.date}</Typography>
               </Grid>
-              <Typography color='#D3E97A' variant="h6">{exp.company}</Typography>
+              <Typography color="#61d5ff" variant="h6">
+                {exp.company}
+              </Typography>
               <Typography variant="h6">{exp.description}</Typography>
             </>
           ))}

@@ -28,6 +28,26 @@ const theme = createTheme({
         },
       },
     },
+    
+
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          textAlign: 'center', 
+        },
+      },
+    },
+    
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          fontSize: '2rem',
+          fontWeight: 'bold',
+          padding: '2rem', 
+        },
+      },
+    },
+
   },
   typography: {
     h1: {

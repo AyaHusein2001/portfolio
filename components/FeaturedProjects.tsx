@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import CustomTitle from "./CustomTitle";
 import Project from "./Project";
 import projects from "@/data/projects";
 const FeaturedProjects = () => {
@@ -17,8 +16,7 @@ const FeaturedProjects = () => {
       </Typography>
 
       <Typography width={540} variant="h6">
-        Here are some of the selected projects that showcase my passion for
-        front-end development.
+        Here are some of the selected projects that showcase my skills .
       </Typography>
 
       {projects.map((project) => (

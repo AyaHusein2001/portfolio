@@ -4,12 +4,16 @@ import { Manrope } from "next/font/google";
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
 const CustomTextField:React.FC<{
-    multiline:boolean,
-    label:string
-}> = ({multiline,label}) => {
+    multiline?:boolean,
+    label:string;
+    name:string;
+    type?:string;
+}> = ({multiline=false,label,name,type='text'}) => {
   return (
     <TextField
     multiline={multiline}
+    name={name}
+    type={type}
     sx={{
       backgroundColor: "#1A1A1A",
       width: "50rem",

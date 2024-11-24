@@ -1,10 +1,11 @@
 import { Box, IconButton, Typography } from "@mui/material";
-import CustomTitle from "./CustomTitle";
 import Image from "next/image";
 import { FaCircle } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import CustomContainedButton from "./CustomContainedButton";
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import Link from "next/link";
 const Hero = () => {
   return (
     <Box
@@ -34,35 +35,32 @@ const Hero = () => {
         </Box>
 
         <Typography variant="h6">
-          A Sydney based front-end developer passionate about building
-          accessible and user friendly websites.
+          A full-stack developer passionate about creating responsive,
+          user-friendly web applications and innovative software solutions.
         </Typography>
 
         <Box sx={{ display: "flex", gap: "1rem" }}>
           <CustomContainedButton
-            icon={<FaCircle size={10} />}
+            link="#lets-connect"
+            xsIcon={
+              <BsFillArrowUpRightCircleFill
+                style={{ marginLeft: "2rem" }}
+                size={35}
+              />
+            }
+            lgIcon={<FaCircle style={{ marginLeft: "2rem" }} size={10} />}
             text="Contact Me"
           />
-          <IconButton
-            sx={{
-              backgroundColor: "#222222",
-              width: "5.4rem",
-              height: "5.4rem",
-            }}
-            aria-label="linkedin"
-          >
-            <FaLinkedinIn color="#D3E97A" />
-          </IconButton>
-          <IconButton
-            sx={{
-              backgroundColor: "#222222",
-              width: "5.4rem",
-              height: "5.4rem",
-            }}
-            aria-label="linkedin"
-          >
-            <FaGithub color="#D3E97A" />
-          </IconButton>
+          <Link href="https://www.linkedin.com/in/aya-ahmed-50106914a/">
+            <IconButton aria-label="linkedin">
+              <FaLinkedinIn color="#61d5ff" />
+            </IconButton>
+          </Link>
+          <Link href="https://github.com/AyaHusein2001">
+            <IconButton aria-label="github">
+              <FaGithub color="#61d5ff" />
+            </IconButton>
+          </Link>
         </Box>
       </Box>
 

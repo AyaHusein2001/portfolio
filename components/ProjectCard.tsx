@@ -13,7 +13,7 @@ const ProjectCard: React.FC<{
       sx={{
         backgroundColor: "#1A1A1A",
         width: { xs: "34.3rem", lg: "60rem" },
-        height: { xs: "34.3rem", lg: "60rem" },
+        height: { xs: "34.3rem", lg: "45rem" },
         borderRadius: "1.2rem",
         display: "flex",
         alignItems: "flex-start",

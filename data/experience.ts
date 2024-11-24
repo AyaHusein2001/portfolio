@@ -1,24 +1,17 @@
 const experience = [
   {
-    role: "Front-End Intern",
+    role: "Web Developer Intern",
     description:
-      "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    company: "Roos Tech",
-    date: "Sep 2023 — Nov 2023 ",
+      "Used HTML, CSS, JavaScript, and jQuery alongside the Laserfiche system to develop educational applications.",
+    company: "Nile University",
+    date: "Aug 2023",
   },
   {
-    role: "Front-End Intern",
+    role: "Full-stack Intern",
     description:
-      "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    company: "Roos Tech",
-    date: "Sep 2023 — Nov 2023 ",
-  },
-  {
-    role: "Front-End Intern",
-    description:
-      "Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    company: "Roos Tech",
-    date: "Sep 2023 — Nov 2023 ",
+      "Built a full-stack flight booking system using HTML, CSS, JavaScript, and Flask. The system included features for managing bookings and flight data.",
+    company: "Remotecoders",
+    date: "Oct 2024",
   },
 ];
 export default experience;

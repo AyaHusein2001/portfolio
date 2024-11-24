@@ -5,9 +5,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { Box } from "@mui/material";
+import Link from "next/link";
 
 const drawerWidth = 240;
-const navItems = ["Work", "About", "Contact"];
 
 const SideBar: React.FC<{
   mobileOpen: boolean;
@@ -16,14 +16,29 @@ const SideBar: React.FC<{
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <List>
-        
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primaryTypographyProps={{ style: { fontSize: "2rem", fontWeight: "bold" } }}   primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link href="/about#experience">
+              <ListItemText primary="Work" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link href="#about">
+              <ListItemText primary="About" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link href="#lets-connect">
+              <ListItemText primary="Contact" />
+            </Link>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -44,10 +59,9 @@ const SideBar: React.FC<{
             width: drawerWidth,
             backgroundColor: "#000000",
             color: "#fff",
-            paddingTop:'3rem'
+            paddingTop: "3rem",
           },
         }}
-        
       >
         {drawer}
       </Drawer>
