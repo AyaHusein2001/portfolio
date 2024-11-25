@@ -1,0 +1,17 @@
+.button-link {
+  background-color: #61d5ff;
+  color: #0a0a0a;
+  border-radius: 10rem;
+  width: fit-content;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.button-link:hover {
+  background-color: #387e97;
+  color: #fff;
+}
+
