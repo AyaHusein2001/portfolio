@@ -16,7 +16,7 @@ const CustomTextField:React.FC<{
     type={type}
     sx={{
       backgroundColor: "#1A1A1A",
-      width: "50rem",
+      width: {xs:"30rem",lg:"50rem"},
       marginBottom:'2.4rem',
       "& .MuiInputLabel-root": { color: "#C7C7C7",fontSize:'1.6rem' },
       "& .MuiInputLabel-root.Mui-focused": { color: "#FFFFFF" },

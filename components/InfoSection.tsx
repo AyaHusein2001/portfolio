@@ -51,7 +51,7 @@ const Info = () => {
             </Typography>
           </Grid>
 
-          <Stack direction="row" sx={{ gap: "1rem" }}>
+          <Stack direction="row" alignItems='center' sx={{ gap: "1rem" }}>
             <CustomContainedButton
               link="https://drive.google.com/uc?export=view&id=1zhBOaNcBLopSxqtRfmj2moO2mMlWRyzH"
               xsIcon={

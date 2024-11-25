@@ -38,7 +38,7 @@ export default function DrawerAppBar() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ color: "#C7C7C7", mr: 2, display: { lg: "none" } }}
+            sx={{ color: "#C7C7C7", backgroundColor: "transparent", mr: 2, display: { lg: "none" } }}
           >
             
             <TbMenu color="#C7C7C7" size={44} />

@@ -1,9 +1,8 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { Manrope } from "next/font/google";
 import Grid from "@mui/material/Grid2";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {  FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import CustomTextField from "./CustomTextField";
 import InlineLink from "./InlineLink";
 import { sendEmail } from "@/lib/actions";

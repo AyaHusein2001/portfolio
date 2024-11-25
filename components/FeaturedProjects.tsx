@@ -15,7 +15,7 @@ const FeaturedProjects = () => {
         Featured Projects
       </Typography>
 
-      <Typography width={540} variant="h6">
+      <Typography sx={{width: {xs:'34.3rem',lg:'57.6rem'}}} variant="h6">
         Here are some of the selected projects that showcase my skills .
       </Typography>
 

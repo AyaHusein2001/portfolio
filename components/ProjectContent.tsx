@@ -7,7 +7,6 @@ import CustomLink from "./CustomLink";
 const ProjectContent: React.FC<{
   title: string;
   description: string;
-
   year: string;
   role: string;
   demo: string;
@@ -16,8 +15,9 @@ const ProjectContent: React.FC<{
   return (
     <Box
       sx={{
-        width: 576,
+        width: {xs:'34.3rem',lg:'57rem'},
         paddingLeft: { xs: "0", lg: "3rem" },
+        paddingRight: { xs: "0", lg: "3rem" },
         paddingTop: "3.5rem",
       }}
     >
@@ -25,7 +25,7 @@ const ProjectContent: React.FC<{
         {title}
       </Typography>
 
-      <Typography width={576} variant="h6">
+      <Typography sx={{width: {xs:'34.3rem',lg:'52rem'}}} variant="h6">
         {description}
       </Typography>
 

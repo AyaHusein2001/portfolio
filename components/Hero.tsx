@@ -39,7 +39,7 @@ const Hero = () => {
           user-friendly web applications and innovative software solutions.
         </Typography>
 
-        <Box sx={{ display: "flex", gap: "1rem" }}>
+        <Box sx={{ display: "flex",alignItems:'center', gap: "1rem" }}>
           <CustomContainedButton
             link="#lets-connect"
             xsIcon={
