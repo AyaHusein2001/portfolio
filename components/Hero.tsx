@@ -6,6 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import CustomContainedButton from "./CustomContainedButton";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import Link from "next/link";
+import classes from './classes.module.css'
+import GsapImage from "./GsapImage";
 const Hero = () => {
   return (
     <Box
@@ -29,8 +31,8 @@ const Hero = () => {
       >
         <Box>
           <Typography variant="h1">
-            HI,I AM <br />
-            AYA AHMED.
+            HI,I AM
+            <p className={classes.name}>AYA AHMED.</p>
           </Typography>
         </Box>
 
@@ -39,7 +41,7 @@ const Hero = () => {
           user-friendly web applications and innovative software solutions.
         </Typography>
 
-        <Box sx={{ display: "flex",alignItems:'center', gap: "1rem" }}>
+        <Box sx={{ display: "flex", alignItems: 'center', gap: "1rem" }}>
           <CustomContainedButton
             link="#lets-connect"
             xsIcon={
@@ -63,10 +65,10 @@ const Hero = () => {
           </Link>
         </Box>
       </Box>
+      {/**src="https://drive.google.com/file/d/14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq/view?usp=sharing"  */}
+      {/**src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"  */}
 
-      <Box>
-        {/**src="https://drive.google.com/file/d/14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq/view?usp=sharing"  */}
-        {/**src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"  */}
+      {/* <Box>
         <Image
           src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"
           alt="aya"
@@ -74,7 +76,8 @@ const Hero = () => {
           height={600}
           style={{ borderRadius: "2rem" }}
         />
-      </Box>
+      </Box> */}
+      <GsapImage/>
     </Box>
   );
 };

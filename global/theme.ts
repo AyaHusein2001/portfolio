@@ -19,35 +19,64 @@ const theme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "#222222", 
-          width: "5.4rem", 
-          height: "5.4rem", 
+          backgroundColor: "#222222",
+          width: "5.4rem",
+          height: "5.4rem",
           "&:hover": {
-            backgroundColor: "#333333", 
+            backgroundColor: "#333333",
           },
         },
       },
     },
-    
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#1A1A1A",
+          marginBottom: "2.4rem",
+          width: "100%", // Default width
+          [`@media (min-width:600px)`]: {
+            width: "30rem",
+          },
+          [`@media (min-width:1280px)`]: {
+            width: "50rem",
+          },
+          "& .MuiInputLabel-root": {
+            color: "#C7C7C7",
+            fontSize: "1.6rem",
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#FFFFFF",
+          },
+          "& .MuiFilledInput-root": {
+            fontFamily: manrope.style.fontFamily,
+            color: "#FFFFFF",
+            fontSize: "1.8rem",
+            fontWeight: "400",
+          },
+          "& .MuiFilledInput-root.Mui-focused::after": {
+            borderBottomColor: "#FFFFFF",
+          },
+        },
+      },
+    },
 
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          textAlign: 'center', 
-        },
-      },
-    },
-    
-    MuiListItemText: {
-      styleOverrides: {
-        primary: {
-          fontSize: '2rem',
-          fontWeight: 'bold',
-          padding: '2rem', 
+          textAlign: "center",
         },
       },
     },
 
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          fontSize: "2rem",
+          fontWeight: "bold",
+          padding: "2rem",
+        },
+      },
+    },
   },
   typography: {
     h1: {

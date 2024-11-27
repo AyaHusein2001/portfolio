@@ -7,20 +7,22 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+
 export default async function shareEmail(mail: {
   name: string;
   email: string;
   subject: string;
   message: string;
 }) {
-  let mailOptions = await transporter.sendMail({
+  const mailOptions = {
     from: mail.email,
     to: process.env.EMAIL_USER,
     subject: mail.subject,
     text: mail.message,
-  });
+  };
+
   try {
-    await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions); // Send the email only once
     return {
       statusCode: 200,
       message: "Email sent successfully",

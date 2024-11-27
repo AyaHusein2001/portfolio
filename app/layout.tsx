@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import theme from "@/global/theme";
 import { ThemeProvider } from "@mui/material/styles";
+import toast, { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Aya Ahmed Portfolio",
@@ -21,6 +22,14 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={theme}>
           <AppRouterCacheProvider>
+            <Toaster
+            toastOptions={{
+              duration: 3000, // 3 seconds
+              style: {
+                fontSize:'1.8rem'
+              },
+            }}
+            position="top-center" reverseOrder={false} />
             <NavBar />
 
             {children}

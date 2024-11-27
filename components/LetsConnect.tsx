@@ -1,15 +1,13 @@
-import { Button, IconButton, Stack, Typography } from "@mui/material";
-import { Manrope } from "next/font/google";
+import {  IconButton, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import CustomTextField from "./CustomTextField";
 import InlineLink from "./InlineLink";
-import { sendEmail } from "@/lib/actions";
 import Link from "next/link";
-const manrope = Manrope({ weight: "400", subsets: ["latin"] });
+import LetsConnectForm from "./LetsConnectForm";
 
 const LetsConnect = () => {
+  
   return (
     <Grid
       container
@@ -71,37 +69,7 @@ const LetsConnect = () => {
         </Grid>
       </Grid>
       <Grid sx={{ height: "100%" }} columns={{ xs: 6, lg: 12 }}>
-        <form
-          action={sendEmail}
-          style={{ display: "flex", flexDirection: "column", gap: "2.4rem" }}
-        >
-          <CustomTextField label="Name" name="name" />
-          <CustomTextField type="email" label="Email" name="email" />
-          <CustomTextField label="Subject" name="subject" />
-          <CustomTextField label="Message" name="message" multiline={true} />
-          <Button
-            sx={{
-              backgroundColor: "#61d5ff",
-              color: "#0A0A0A",
-              borderRadius: "10rem",
-              width: "fit-content",
-              paddingRight: "2.5rem",
-              paddingLeft: "2.5rem",
-              paddingTop: "1.5rem",
-              paddingBottom: "1.5rem",
-              fontFamily: manrope.style.fontFamily,
-              fontSize: "1.6rem",
-              fontWeight: "700",
-              "&:hover": {
-                backgroundColor: "#387e97",
-                color: "#fff",
-              },
-            }}
-            type="submit"
-          >
-            SUBMIT
-          </Button>
-        </form>
+        <LetsConnectForm/>
       </Grid>
     </Grid>
   );
