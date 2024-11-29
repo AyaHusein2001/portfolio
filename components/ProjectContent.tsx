@@ -31,12 +31,12 @@ const ProjectContent: React.FC<{
       {
         y: 0,
         autoAlpha: 1,
-        duration: 1,
+        duration: 0.5,
         ease: "power3.out",
         scrollTrigger: {
           trigger: `#${id} .title`,
-          start: "top 80%", // When 80% of the viewport is in view
-          toggleActions: "restart none none none", // Restart on re-entry
+          start: "top 80%", 
+          toggleActions: "restart none none none",
         },
       }
     );
@@ -64,7 +64,7 @@ const ProjectContent: React.FC<{
             start: "top 80%",
             toggleActions: "restart none none none",
           },
-          delay: 0.5, // Delay after description
+          delay: 0.5, 
         }
       );
     }
@@ -77,7 +77,7 @@ const ProjectContent: React.FC<{
         y: 0,
         autoAlpha: 1,
         stagger: 0.2,
-        duration: 1,
+        duration: 0.5,
         ease: "power3.out",
         scrollTrigger: {
           trigger: `#${id} .info-item`,

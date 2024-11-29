@@ -62,8 +62,8 @@ const LetsConnect = () => {
             </Link>
           </Stack>
         </Grid>
-        <Grid>
-          <Typography sx={{ alignSelf: "flex-end" }} variant="h6">
+        <Grid sx={{display:'flex',justifyContent:'flex-end'}}>
+          <Typography sx={{ paddingY:'2rem' }} variant="h6">
             © 2024 Aya Ahmed
           </Typography>
         </Grid>

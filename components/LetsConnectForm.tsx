@@ -5,7 +5,8 @@ import { Manrope } from "next/font/google";
 import { sendEmail } from "@/lib/actions";
 import { toast } from "react-hot-toast";
 import { useForm, SubmitHandler } from "react-hook-form";
-import classes from './classes.module.css'
+import classes from './classes.module.css';
+
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 type FormValues = {
   name: string;
@@ -112,20 +113,15 @@ const LetsConnectForm = () => {
           color: "#0A0A0A",
           borderRadius: "10rem",
           width: "fit-content",
-          paddingRight: "2.5rem",
-          paddingLeft: "2.5rem",
-          paddingTop: "1.5rem",
-          paddingBottom: "1.5rem",
+          padding: "1.5rem 2.5rem",     
           fontFamily: manrope.style.fontFamily,
           fontSize: "1.6rem",
           fontWeight: "700",
-          "&:hover": {
-            backgroundColor: "#387e97",
-            color: "#fff",
-          },
+          
         }}
         type="submit"
         disabled={isSubmitting}
+        className={classes['button-link']}
       >
         {!isSubmitting?'SUBMIT':'Loading ...'}
       </Button>

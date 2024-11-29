@@ -10,11 +10,8 @@ import { Box } from "@mui/material";
 
 const GsapImage = () => {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    
+     
     gsap.set(".animated-image", { x: "100%" });
-
     
     gsap.to(".animated-image", {
       scrollTrigger: {
@@ -31,7 +28,7 @@ const GsapImage = () => {
   return (
     <Box>
       <Image
-        className="animated-image" // Add class for GSAP targeting
+        className="animated-image"
         src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"
         alt="aya"
         width={500}

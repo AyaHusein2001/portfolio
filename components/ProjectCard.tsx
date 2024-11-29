@@ -1,6 +1,13 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
 const ProjectCard: React.FC<{
@@ -8,8 +15,30 @@ const ProjectCard: React.FC<{
   title: string;
   projectType: string;
 }> = ({ image, title, projectType }) => {
+
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      gsap.fromTo(
+        cardRef.current,
+        { scale: 0.8 }, 
+        {
+          scale: 1, 
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 80%", 
+            toggleActions: "restart none none none",
+          },
+        }
+      );
+    }
+  }, []);
   return (
     <Box
+      ref={cardRef}
       sx={{
         backgroundColor: "#1A1A1A",
         width: { xs: "34.3rem", lg: "60rem" },
@@ -36,6 +65,7 @@ const ProjectCard: React.FC<{
           marginTop: "1.6rem",
           marginLeft: "1.6rem",
         }}
+        
       >
         {projectType}
       </Button>
