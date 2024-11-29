@@ -5,6 +5,7 @@ import { Manrope } from "next/font/google";
 import { sendEmail } from "@/lib/actions";
 import { toast } from "react-hot-toast";
 import { useForm, SubmitHandler } from "react-hook-form";
+import classes from './classes.module.css'
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 type FormValues = {
   name: string;
@@ -55,7 +56,7 @@ const LetsConnectForm = () => {
           variant="filled"
           error={!!errors?.name}
         />
-        {errors.name && <span>{errorMessage}</span>}
+        {errors.name && <span className={classes.error}>{errorMessage}</span>}
       </Stack>
       <Stack>
         <TextField
@@ -71,7 +72,7 @@ const LetsConnectForm = () => {
           variant="filled"
           error={!!errors?.email}
         />
-        {errors.email && <span>{errorMessage}</span>}
+        {errors.email && <span className={classes.error}>{errorMessage}</span>}
       </Stack>
       <Stack>
         <TextField
@@ -86,7 +87,7 @@ const LetsConnectForm = () => {
           variant="filled"
           error={!!errors?.subject}
         />
-        {errors.subject && <span>{errorMessage}</span>}
+        {errors.subject && <span className={classes.error}>{errorMessage}</span>}
       </Stack>
       <Stack>
         <TextField
@@ -102,7 +103,7 @@ const LetsConnectForm = () => {
           variant="filled"
           error={!!errors?.message}
         />
-        {errors.message && <span>{errorMessage}</span>}
+        {errors.message && <span className={classes.error}>{errorMessage}</span>}
       </Stack>
 
       <Button
@@ -124,8 +125,9 @@ const LetsConnectForm = () => {
           },
         }}
         type="submit"
+        disabled={isSubmitting}
       >
-        SUBMIT
+        {!isSubmitting?'SUBMIT':'Loading ...'}
       </Button>
     </form>
   );

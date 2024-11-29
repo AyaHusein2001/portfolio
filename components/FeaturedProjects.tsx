@@ -19,8 +19,9 @@ const FeaturedProjects = () => {
         Here are some of the selected projects that showcase my skills .
       </Typography>
 
-      {projects.map((project) => (
+      {projects.map((project,index) => (
         <Project
+        id={`project-${index}`} 
           key={project.title}
           title={project.title}
           image={project.image}
