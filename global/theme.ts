@@ -5,7 +5,7 @@ import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
-
+// manipulating theme
 const theme = createTheme({
   components: {
     MuiDivider: {
