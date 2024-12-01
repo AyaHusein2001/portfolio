@@ -5,6 +5,7 @@ import { FaCircle, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
 import { MdDownloadForOffline } from "react-icons/md";
 import Link from "next/link";
+import accounts from "@/data/accounts";
 
 const Info = () => {
   return (
@@ -63,12 +64,12 @@ const Info = () => {
               lgIcon={<FaCircle style={{ marginLeft: "2rem" }} size={10} />}
               text="Download Resume"
             />
-            <Link href="https://www.linkedin.com/in/aya-ahmed-50106914a/">
+            <Link href={accounts.linkedin}>
               <IconButton aria-label="linkedin">
                 <FaLinkedinIn color="#61d5ff" />
               </IconButton>
             </Link>
-            <Link href="https://github.com/AyaHusein2001">
+            <Link href={accounts.github}>
               <IconButton aria-label="github">
                 <FaGithub color="#61d5ff" />
               </IconButton>

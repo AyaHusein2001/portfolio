@@ -1,7 +1,4 @@
 "use server";
-
-import shareEmail from "./email";
-
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({

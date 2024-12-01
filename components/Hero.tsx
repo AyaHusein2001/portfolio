@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Box, IconButton, Typography } from "@mui/material";
 
 import { FaCircle } from "react-icons/fa";
@@ -10,59 +10,26 @@ import Link from "next/link";
 
 import GsapImage from "./GsapImage";
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import accounts from "@/data/accounts";
+import { charByChar, slideIn } from "@/util/animation";
 
-gsap.registerPlugin(ScrollTrigger);
 
+// Helper function to wrap each character in a span
+const wrapText = (text: string) => {
+  return text.split("").map((char, i) => (
+    <span key={i} style={{ opacity: 0 }}>
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ));
+};
 const Hero = () => {
   useEffect(() => {
-    
-    gsap.set(".hi", { x: "-100%" });
-    gsap.to(".hi", {
-      scrollTrigger: {
-        trigger: ".hi", 
-        toggleActions: "restart none none none",
-      },
-      x: 0,
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    gsap.to(".name span", {
-      opacity: 1,
-      y: 0,
-      stagger: 0.1, 
-      duration: 2,
-      ease: "power2.out",
-      delay: 1, 
-      repeat:-1
-
-    });
-
-    gsap.set(".description", { x: "-200%" });
-    gsap.to(".description", {
-      scrollTrigger: {
-        trigger: ".description",
-        
-        toggleActions: "restart none none none",
-      },
-      x: 0,
-      duration: 2,
-      ease: "power2.out",
-      delay:1
-    });
-
+    slideIn("left", ".hi", ".hi", 0.5);
+    slideIn("left", ".description", ".description", 0.5);
+    slideIn("up", ".buttons", ".buttons", 0.5);
+    charByChar(".name");
   }, []);
 
-  // Helper function to wrap each character in a span
-  const wrapText = (text: string) => {
-    return text.split("").map((char, i) => (
-      <span key={i} style={{ opacity: 0, transform: "translateY(20px)" }}>
-        {char === " " ? "\u00A0" : char}
-      </span>
-    ));
-  };
   return (
     <Box
       sx={{
@@ -97,7 +64,10 @@ const Hero = () => {
           user-friendly web applications and innovative software solutions.
         </Typography>
 
-        <Box sx={{ display: "flex", alignItems: 'center', gap: "1rem" }}>
+        <Box
+          className="buttons"
+          sx={{ display: "flex", alignItems: "center", gap: "1rem" }}
+        >
           <CustomContainedButton
             link="#lets-connect"
             xsIcon={
@@ -109,12 +79,13 @@ const Hero = () => {
             lgIcon={<FaCircle style={{ marginLeft: "2rem" }} size={10} />}
             text="Contact Me"
           />
-          <Link href="https://www.linkedin.com/in/aya-ahmed-50106914a/">
+
+          <Link href={accounts.linkedin}>
             <IconButton aria-label="linkedin">
               <FaLinkedinIn color="#61d5ff" />
             </IconButton>
           </Link>
-          <Link href="https://github.com/AyaHusein2001">
+          <Link href={accounts.github}>
             <IconButton aria-label="github">
               <FaGithub color="#61d5ff" />
             </IconButton>

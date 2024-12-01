@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import InlineLink from "./InlineLink";
 import Link from "next/link";
 import LetsConnectForm from "./LetsConnectForm";
+import accounts from "@/data/accounts";
 
 const LetsConnect = () => {
   
@@ -50,12 +51,12 @@ const LetsConnect = () => {
           </Typography>
 
           <Stack direction="row" sx={{ gap: "1.6rem", paddingTop: "4rem" }}>
-            <Link href="https://github.com/AyaHusein2001">
+            <Link href={accounts.github}>
               <IconButton sx={{ backgroundColor: "transparent" }}>
                 <FaGithub size={32} color="#61d5ff" />
               </IconButton>
             </Link>
-            <Link href="https://www.linkedin.com/in/aya-ahmed-50106914a/">
+            <Link href={accounts.linkedin}>
               <IconButton sx={{ backgroundColor: "transparent" }}>
                 <FaLinkedinIn size={32} color="#61d5ff" />
               </IconButton>

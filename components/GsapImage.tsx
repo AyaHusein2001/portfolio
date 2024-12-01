@@ -1,30 +1,14 @@
 'use client';
 import { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-
 import React from 'react';
 import Image from "next/image";
 import { Box } from "@mui/material";
+import { slideIn } from "@/util/animation";
 
 const GsapImage = () => {
   useEffect(() => {
-     
-    gsap.set(".animated-image", { x: "100%" });
-    
-    gsap.to(".animated-image", {
-      scrollTrigger: {
-        trigger: ".animated-image", 
-        start: "top 80%", 
-        toggleActions: "restart none none none",
-      },
-      x: 0,
-      duration: 2,
-      ease: "power2.out", 
-    });
-  }, []);
-
+   slideIn("right", ".animated-image", ".animated-image", 0.5)
+  },[]);
   return (
     <Box>
       <Image

@@ -4,9 +4,8 @@ import { useEffect, useRef } from "react";
 import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import {scale} from '../util/animation'
+
 
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
@@ -20,22 +19,10 @@ const ProjectCard: React.FC<{
 
   useEffect(() => {
     if (cardRef.current) {
-      gsap.fromTo(
-        cardRef.current,
-        { scale: 0.8 }, 
-        {
-          scale: 1, 
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: cardRef.current,
-            start: "top 80%", 
-            toggleActions: "restart none none none",
-          },
-        }
-      );
+      scale(cardRef.current);
     }
   }, []);
+
   return (
     <Box
       ref={cardRef}
