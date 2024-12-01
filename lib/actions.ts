@@ -25,8 +25,7 @@ export async function sendEmail(mail: {
   }
   const mailOptions = {
     from: mail.email,
-    // from: 'khattsallaman@gmail.com', // sender address
-    // sender: mail.email,
+   
     to: process.env.EMAIL_USER,
     subject: mail.subject,
     text: mail.message,
@@ -34,7 +33,7 @@ export async function sendEmail(mail: {
   };
   console.log(mailOptions)
   try {
-    await transporter.sendMail(mailOptions); // Send the email only once
+    await transporter.sendMail(mailOptions); 
     return {
       statusCode: 200,
       message: "Email sent successfully",
