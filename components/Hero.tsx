@@ -1,11 +1,35 @@
+"use client";
 import { Box, IconButton, Typography } from "@mui/material";
-import CustomTitle from "./CustomTitle";
-import Image from "next/image";
+
 import { FaCircle } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import CustomContainedButton from "./CustomContainedButton";
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import Link from "next/link";
+
+import GsapImage from "./GsapImage";
+import { useEffect } from "react";
+import accounts from "@/data/accounts";
+import { charByChar, slideIn } from "@/util/animation";
+
+
+// Helper function to wrap each character in a span
+const wrapText = (text: string) => {
+  return text.split("").map((char, i) => (
+    <span key={i} style={{ opacity: 0 }}>
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ));
+};
 const Hero = () => {
+  useEffect(() => {
+    slideIn("left", ".hi", ".hi", 0.5);
+    slideIn("left", ".description", ".description", 0.5);
+    slideIn("up", ".buttons", ".buttons", 0.5);
+    charByChar(".name");
+  }, []);
+
   return (
     <Box
       sx={{
@@ -27,56 +51,48 @@ const Hero = () => {
         }}
       >
         <Box>
-          <Typography variant="h1">
-            HI,I AM <br />
-            AYA AHMED.
+          <Typography className="hi" variant="h1">
+            HI, I AM
+          </Typography>
+          <Typography className="name" variant="h1">
+            {wrapText("Aya Ahmed.")}
           </Typography>
         </Box>
 
-        <Typography variant="h6">
-          A Sydney based front-end developer passionate about building
-          accessible and user friendly websites.
+        <Typography className="description" variant="h6">
+          A full-stack developer passionate about creating responsive,
+          user-friendly web applications and innovative software solutions.
         </Typography>
 
-        <Box sx={{ display: "flex", gap: "1rem" }}>
+        <Box
+          className="buttons"
+          sx={{ display: "flex", alignItems: "center", gap: "1rem" }}
+        >
           <CustomContainedButton
-            icon={<FaCircle size={10} />}
+            link="#lets-connect"
+            xsIcon={
+              <BsFillArrowUpRightCircleFill
+                style={{ marginLeft: "2rem" }}
+                size={35}
+              />
+            }
+            lgIcon={<FaCircle style={{ marginLeft: "2rem" }} size={10} />}
             text="Contact Me"
           />
-          <IconButton
-            sx={{
-              backgroundColor: "#222222",
-              width: "5.4rem",
-              height: "5.4rem",
-            }}
-            aria-label="linkedin"
-          >
-            <FaLinkedinIn color="#D3E97A" />
-          </IconButton>
-          <IconButton
-            sx={{
-              backgroundColor: "#222222",
-              width: "5.4rem",
-              height: "5.4rem",
-            }}
-            aria-label="linkedin"
-          >
-            <FaGithub color="#D3E97A" />
-          </IconButton>
+
+          <Link href={accounts.linkedin}>
+            <IconButton aria-label="linkedin">
+              <FaLinkedinIn color="#61d5ff" />
+            </IconButton>
+          </Link>
+          <Link href={accounts.github}>
+            <IconButton aria-label="github">
+              <FaGithub color="#61d5ff" />
+            </IconButton>
+          </Link>
         </Box>
       </Box>
-
-      <Box>
-        {/**src="https://drive.google.com/file/d/14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq/view?usp=sharing"  */}
-        {/**src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"  */}
-        <Image
-          src="https://drive.google.com/uc?export=view&id=14M1AjMqOlYOhNwKw5DCCLrmqEXTHTNsq"
-          alt="aya"
-          width={500}
-          height={600}
-          style={{ borderRadius: "2rem" }}
-        />
-      </Box>
+      <GsapImage />
     </Box>
   );
 };

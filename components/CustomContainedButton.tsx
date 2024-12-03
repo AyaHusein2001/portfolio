@@ -1,27 +1,29 @@
+"use client";
 import * as React from "react";
-import Button from "@mui/material/Button";
 import { Manrope } from "next/font/google";
+import Link from "next/link";
+import { useMediaQuery } from "@mui/material";
+import classes from "./classes.module.css";
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
-const CustomContainedButton:React.FC<{text:string,icon?:React.ReactNode}> = ({text,icon}) => {
+const CustomContainedButton: React.FC<{
+  text: string;
+  xsIcon?: React.ReactNode;
+  lgIcon?: React.ReactNode;
+  link: string;
+}> = ({ text, xsIcon, lgIcon, link }) => {
+  const isLargeScreen = useMediaQuery("(min-width:1200px)");
+  const icon = isLargeScreen ? lgIcon : xsIcon;
   return (
-    <Button
-      sx={{
-        backgroundColor: "#D3E97A",
-        color: "#0A0A0A",
-        borderRadius: "10rem",
-        width: "18.7rem",
-        height: "5.4rem",
+    <Link
+      href={link}
+      className={classes['button-link']}
+      style={{
         fontFamily: manrope.style.fontFamily,
-        fontSize: "1.6rem",
-        fontWeight: "700",
-        gap: "15px",
       }}
-      variant="contained"
-      endIcon={icon}
     >
-      {text}
-    </Button>
+      {text} {icon}
+    </Link>
   );
 };
 export default CustomContainedButton;

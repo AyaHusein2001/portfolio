@@ -1,6 +1,12 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Box, Button } from "@mui/material";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
+import {scale} from '../util/animation'
+
+
 const manrope = Manrope({ weight: "400", subsets: ["latin"] });
 
 const ProjectCard: React.FC<{
@@ -8,12 +14,22 @@ const ProjectCard: React.FC<{
   title: string;
   projectType: string;
 }> = ({ image, title, projectType }) => {
+
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      scale(cardRef.current);
+    }
+  }, []);
+
   return (
     <Box
+      ref={cardRef}
       sx={{
         backgroundColor: "#1A1A1A",
         width: { xs: "34.3rem", lg: "60rem" },
-        height: { xs: "34.3rem", lg: "60rem" },
+        height: { xs: "34.3rem", lg: "45rem" },
         borderRadius: "1.2rem",
         display: "flex",
         alignItems: "flex-start",
@@ -36,6 +52,7 @@ const ProjectCard: React.FC<{
           marginTop: "1.6rem",
           marginLeft: "1.6rem",
         }}
+        
       >
         {projectType}
       </Button>

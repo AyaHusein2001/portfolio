@@ -8,14 +8,14 @@ const CustomLink: React.FC<{ children: ReactNode; link: string }> = ({
   return (
     <Link
       style={{
-        borderColor: "#D3E97A",
+        borderColor: "#61d5ff",
         borderBottom: "2px solid",
         paddingBottom: "4px",
         display: "flex",
         alignItems: "center",
         fontWeight: "700",
         fontSize: "1.6rem",
-        color:"#D3E97A",
+        color:"#61d5ff",
         width: "fit-content",
       }}
       href={link}

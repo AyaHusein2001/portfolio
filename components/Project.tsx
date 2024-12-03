@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid2";
 import ProjectContent from "./ProjectContent";
 
 const Project: React.FC<{
+  id:string;
   title: string;
   description: string;
   image: string;
@@ -13,7 +14,7 @@ const Project: React.FC<{
   demo: string;
   repo: string;
   projectType:string;
-}> = ({ title, description, image, year, role, demo, repo,projectType }) => {
+}> = ({ title, description, image, year, role, demo, repo,projectType,id }) => {
   return (
     <Box sx={{ width: "100%", height: "100%" }}>
       <Grid sx={{ paddingY: "6rem" }} container spacing={2}>
@@ -22,6 +23,7 @@ const Project: React.FC<{
         </Grid>
         <Grid>
           <ProjectContent
+          id={id}
             title={title}
             description={description}
             year={year}
