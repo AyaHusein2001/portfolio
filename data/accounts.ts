@@ -4,3 +4,15 @@ const accounts = {
 };
 
 export default accounts;
+
+/*
+import { FaLinkedinIn } from "react-icons/fa";
+
+const accounts =[ {
+    link:'https://www.linkedin.com/in/aya-ahmed-50106914a/',
+    Icon:FaLinkedinIn
+    
+}];
+
+export default accounts;
+*/
